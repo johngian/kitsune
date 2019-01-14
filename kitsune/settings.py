@@ -1175,3 +1175,9 @@ BADGE_LIMIT_L10N_KB = config('BADGE_LIMIT_L10N_KB', default=10, cast=int)
 BADGE_LIMIT_SUPPORT_FORUM = config('BADGE_LIMIT_SUPPORT_FORUM', default=30, cast=int)
 BADGE_MAX_RECENT = config('BADGE_MAX_RECENT', default=15, cast=int)
 BADGE_PAGE_SIZE = config('BADGE_PAGE_SIZE', default=50, cast=int)
+
+# UX Experiment 1
+UX_EXPERIMENT_1_DOC_SLUGS = {
+    'enable-and-disable-cookies-website-preferences': 'index.html',
+    'insecure-password-warning-firefox': 'index-b.html'
+}

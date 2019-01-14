@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import time
 import re
 from datetime import datetime
@@ -95,6 +96,13 @@ def doc_page_cache(view):
 @mobile_template('wiki/{mobile/}')
 def document(request, document_slug, template=None, document=None):
     """View a wiki document."""
+
+    if document_slug in settings.UX_EXPERIMENT_1_DOC_SLUGS:
+        index_file = settings.UX_EXPERIMENT_1_DOC_SLUGS[document_slug]
+        experiment_root = os.path.join(settings.ROOT, 'kitsune/sumo/static/sumo/experiment-1/')
+        experiment_path = os.path.join(experiment_root, index_file)
+        with open(experiment_path, 'r') as static_index:
+            return HttpResponse(static_index)
 
     fallback_reason = None
     full_locale_name = None
