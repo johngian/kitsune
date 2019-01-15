@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700|Zilla+Slab:400,400i,500,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
-  <link rel="stylesheet" href="src.887bef04.css"></head>
+    {% stylesheet 'kb-sumo-ux-experiment' %}
 
   <body>
     <div id="wrapper">
@@ -215,8 +215,8 @@
 
             <h1 id="w_how-do-i-change-cookie-settings">How do I change cookie settings?</h1>
 
-            <video controls="" poster="enable-and-disable-cookies.2c58ae49.png">
-              <source src="enable-and-disable-cookies.11196927.mp4">
+            <video controls="" poster="{{ STATIC_URL }}sumo/ux-experiment-assets/enable-and-disable-cookies.2c58ae49.png">
+              <source src="{{ STATIC_URL }}sumo/ux-experiments-assets/enable-and-disable-cookies.11196927.mp4">
             </video>
 
             <div class="note">
@@ -514,5 +514,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
 
     <script src="src.19a86a33.js"></script>
+    {% javascript 'kb-sumo-ux-experiment' %}
   </body>
 </html>

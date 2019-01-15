@@ -52,6 +52,10 @@ from kitsune.wiki.tasks import (
 
 
 log = logging.getLogger('k.wiki')
+SUMO_UX_EXPERIMENTS_SLUGS = [
+    'enable-and-disable-cookies-website-preferences',
+    'insecure-password-warning-firefox'
+]
 
 
 def doc_page_cache(view):
@@ -126,6 +130,11 @@ def document(request, document_slug, template=None, document=None):
             # There is no translation
             # and OK to fall back to parent (parent is approved).
             fallback_reason = 'no_translation'
+
+
+    # TODO: we need to setup waffle flag/samples/switches here
+    if doc.slug in SUMO_UX_EXPERIMENTS_SLUGS:
+        return render(request, 'kb-ux-experiment/{0}.html'.format(doc.slug))
 
     # Find and show the defined fallback locale rather than the English version of the document
     # The fallback locale is defined based on the ACCEPT_LANGUAGE header,

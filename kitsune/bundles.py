@@ -264,6 +264,12 @@ PIPELINE_CSS = {
             'sumo/less/badges.less',
         ),
         'output_filename': 'build/badges-min.css'
+    },
+    'kb-sumo-ux-experiment': {
+        'source_filenames': (
+            'sumo/kb-ux-experiment/src.887bef04.css',
+        ),
+        'output_filename': 'build/kb-ux-experiment-min.css'
     }
 }
 
@@ -651,4 +657,10 @@ PIPELINE_JS = {
         ),
         'output_filename': 'build/gtm-snippet-min.js'
     },
+    'kb-sumo-ux-experiment': {
+        'source_filenames': (
+            'sumo/kb-ux-experiment/src.19a86a33.js',
+        ),
+        'output_filename': 'build/kb-ux-experiment-min.js'
+    }
 }
