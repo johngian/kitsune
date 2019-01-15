@@ -660,6 +660,7 @@ PIPELINE_JS = {
     'kb-sumo-ux-experiment': {
         'source_filenames': (
             'sumo/kb-ux-experiment/src.19a86a33.js',
+            'sumo/kb-ux-experiment/analytics.js'
         ),
         'output_filename': 'build/kb-ux-experiment-min.js'
     }
