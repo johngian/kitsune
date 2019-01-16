@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   helpful.addEventListener('click', function() {
-    trackEvent('UX experiment 1', 'helpful article');
+    trackEvent('kb-articles-experiment feedback', 'helpful article');
   });
 
   not_helpful.addEventListener('click', function() {
-    trackEvent('UX experiment 1', 'not helpful article');
+    trackEvent('kb-articles-experiment feedback', 'not helpful article');
   });
 });
