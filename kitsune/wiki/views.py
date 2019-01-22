@@ -133,7 +133,7 @@ def document(request, document_slug, template=None, document=None):
             fallback_reason = 'no_translation'
 
     if flag_is_active(request, 'ux_experiment_1'):
-        if doc.slug in SUMO_UX_EXPERIMENTS_SLUGS:
+        if doc.slug in SUMO_UX_EXPERIMENTS_SLUGS and request.LANGUAGE_CODE == 'en-US':
             return render(request, 'kb-ux-experiment/{0}.html'.format(doc.slug))
 
     # Find and show the defined fallback locale rather than the English version of the document
