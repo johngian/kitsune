@@ -9,6 +9,7 @@
 {% set crumbs = [(None, profile.user.username)] %}
 {% set is_owner = profile and request.user == profile.user %}
 
+{% block breadcrumbs %}{% endblock %}
 {% block content %}
   <div class="grid_9">
     <article id="profile" class="cf">
