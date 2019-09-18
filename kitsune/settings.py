@@ -1209,3 +1209,9 @@ BADGE_PAGE_SIZE = config('BADGE_PAGE_SIZE', default=50, cast=int)
 
 # The canonical, production URL without a trailing slash
 CANONICAL_URL = 'https://support.mozilla.org'
+
+# search/v2 settings
+SEARCH_V2_URL = config('SEARCH_V2_URL', default='elasticsearch7:9200')
+SEARCH_V2_INDEXES = {
+    'default': 'kitsune-search-v2'
+}
