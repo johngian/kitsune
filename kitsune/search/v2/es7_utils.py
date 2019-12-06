@@ -1,6 +1,8 @@
+import importlib
+
 from django.conf import settings
 
-from elasticsearch_dsl import token_filter, analyzer
+from elasticsearch_dsl import token_filter, analyzer, Document
 
 from kitsune.search import config
 from kitsune.search.v2 import elasticsearch7
@@ -49,3 +51,15 @@ def es_analyzer_for_locale(locale):
 def es7_client():
     """Return an ES7 Elasticsearch client"""
     return elasticsearch7.Elasticsearch(settings.ES7_URLS)
+
+
+def get_all_document_types(paths=['kitsune.search.v2.documents']):
+    """Return all registered document types"""
+    types = []
+    modules = [importlib.load_module(path) for path in paths]
+
+    for module in modules:
+        for key in dir(module):
+            if issubclass(getattr(module, key), Document):
+                types.append(module)
+    return types
